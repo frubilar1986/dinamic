@@ -1,0 +1,58 @@
+
+
+/* Estilos css */
+
+/* body{
+    margin: 0;
+    
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+   
+} */
+
+body::before{
+    content: '';
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    background-image: linear-gradient(90deg, #52c4df,#b38fbb);
+    opacity: 0.7;
+    z-index: -100;
+    top: 0;
+}
+
+/* h1,h2{
+    background-color: aquamarine;
+    text-align: center;
+}
+*/
+form{
+    
+    background-color: rgba(253, 253, 253, 0.1) ;
+    
+    
+} 
+/* control ejercicio 7 en division por 0 */
+#alerta {
+    display: none;
+
+}
+/* color de los oconos de validacion */
+
+.has-error  {
+    color: red;
+  }
+
+.has-success {
+    color: rgb(9, 155, 29);
+  }
+.help-block {
+    color: red;
+  }
+
+.help-success {
+    color: rgb(9, 155, 29);
+  }
