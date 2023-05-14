@@ -663,7 +663,62 @@ $(function () {
                         min : 7,
                         max : 8,
                         message : 'entre 7 y 8 caracteres!! '
-                    }
+                    },
+                    apellido: {
+                        validators: {
+                            notEmpty: {
+                                message: "No debe estar vacio"
+                            },
+                            regexp: {
+                                message: "Solo letras"
+                            }
+                        }
+                    },
+                    nombre: {
+                        validators: {
+                            notEmpty: {
+                                message: "No debe estar vacio"
+                            },
+                            regexp: {
+                                message: "Solo letras"
+                            }
+                        }
+                    },
+                    telefono: {
+                        validators: {
+                            notEmpty: {
+                                message: "No debe estar vacio"
+                            },
+                            regexp: {
+                                message: "Solo numero o muchos numeros"
+                            }
+                        }
+                    },
+        
+                    fechaNac: {
+                        validators: {
+        
+                            notEmpty: {
+                                message: "No debe estar vacio <br>"
+                            },
+                            date: {
+                                message: 'debe cumplir con el formato YYYY/MM/DD',
+                                format: 'DD/MM/YYYY'
+                            },
+                            
+                        }
+        
+                    },
+                    domicilio: {
+                        validators: {
+                            notEmpty: {
+                                message: "No debe estar vacio"
+                            },
+                            regexp: {
+                                message: "Solo numeros y letras"
+                            }
+                        }
+                    },
 
                 }
             }
