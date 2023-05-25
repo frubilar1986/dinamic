@@ -97,3 +97,5 @@ include_once "../../estructHtml/cabecera.php";
             <?php
             include_once "../../estructHtml/pie.php";
             ?>
+
+

@@ -29,16 +29,16 @@ $personas = $abmPersona->buscar(null);
                             echo "<th>Ver Vehiculo</th>";
 
                             foreach ($personas as $persona) {
-                                echo"<tr><td>".$persona->getApellido() ."</td>";
-                                echo"<td>".$persona->getNombre(). "</td>";
-                                echo"<td>".$persona->getDomicilio(). "</td>";
-                                echo"<td>".$persona->getNroDni(). "</td>";
+                                echo "<tr><td>" . $persona->getApellido() . "</td>";
+                                echo "<td>" . $persona->getNombre() . "</td>";
+                                echo "<td>" . $persona->getDomicilio() . "</td>";
+                                echo "<td>" . $persona->getNroDni() . "</td>";
                                 // echo "<tr ><td>" . $objDatos->getDescrip() . "</td>";
-                              echo "<td><a class='link-primary' href='autosPersonas.php?nroDni=" . $persona->getNroDni() . "'>Vehiculo</a></td></tr>";
-                               
-                              // echo "<td><a class='link-danger' href='accion.php?accion=borrar&id=" . $objDatos->getId() . "'>Borrar</a></td></tr>";
+                                echo "<td><a class='link-primary' href='autosPersonas.php?nroDni=" . $persona->getNroDni() . "'>Vehiculo</a></td></tr>";
+
+                                // echo "<td><a class='link-danger' href='accion.php?accion=borrar&id=" . $objDatos->getId() . "'>Borrar</a></td></tr>";
                             }
-                        }else{
+                        } else {
                             echo "<p class='h2 alert alert-warning' >Sin registros dentro de la base de datos</p>";
                         }
                         ?>

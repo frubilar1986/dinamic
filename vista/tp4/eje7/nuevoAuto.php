@@ -24,7 +24,7 @@ include_once "../../estructHtml/cabecera.php";
                         $resp = false;
                         // $texto = "Ya existe el auto con esa patente";
                         $datosForm = datos_submitidos();
-                         print_r($datosForm);
+                        //  print_r($datosForm);
                         $abmAuto = new abmauto();
                         $where['patente'] = $datosForm['patente']; //ctrol si existe patente
                         $Autos = $abmAuto->buscar($where);

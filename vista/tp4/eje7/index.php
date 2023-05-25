@@ -55,23 +55,23 @@ $listaDatos = $objAbmTabla->buscar(null);
                     <hr>
                     <table class="table table-success table-hover ">
                         <?php
-                        $ctrol = new abmPersona;
+                        $abmPersona = new abmPersona;
                         // $where['apellido'] = "Apellido";
                         
-                        $listaDatos = $ctrol->buscar(null);
+                        $personas = $abmPersona->buscar(null);
                        
-                        if (count($listaDatos) > 0) {
+                        if (count($personas) > 0) {
                             echo "<th>Apellido</th>";
                             echo "<th>Nombre</th>";
                             echo "<th>Domicilio</th>";
                             echo "<th>Nro Documento</th>";
                             // echo "<th>Ver Vehiculo</th>";
 
-                            foreach ($listaDatos as $objDatos) {
-                                echo"<tr><td>".$objDatos->getApellido() ."</td>";
-                                echo"<td>".$objDatos->getNombre(). "</td>";
-                                echo"<td>".$objDatos->getDomicilio(). "</td>";
-                                echo"<td>".$objDatos->getNroDni(). "</td>";
+                            foreach ($personas as $persona) {
+                                echo"<tr><td>".$persona->getApellido() ."</td>";
+                                echo"<td>".$persona->getNombre(). "</td>";
+                                echo"<td>".$persona->getDomicilio(). "</td>";
+                                echo"<td>".$persona->getNroDni(). "</td>";
                                 // echo "<tr ><td>" . $objDatos->getDescrip() . "</td>";
                                 // echo "<td><a class='link-primary' href='autosPersonas.php?nroDni=" . $objDatos->getNroDni() . "'>Vehiculo</a></td></tr>";
                                 // echo "<td><a class='link-danger' href='accion.php?accion=borrar&id=" . $objDatos->getId() . "'>Borrar</a></td></tr>";

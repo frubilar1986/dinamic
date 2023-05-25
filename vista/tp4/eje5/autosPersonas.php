@@ -23,10 +23,10 @@ include_once "../../estructHtml/cabecera.php";
                         $resp = false;
                         $datosForm = datos_submitidos();
                        
-                        $obj = new abmPersona();
+                        $abmPersona = new abmPersona();
                         // $where['nroDni'] = $datosForm['nroDni']; 
-                        $arrPersona = $obj->buscar($datosForm);
-                        $persona = $arrPersona[0];//primer persona encontrada
+                        $personas = $abmPersona->buscar($datosForm);
+                        $persona = $personas[0];//primer persona encontrada
   
                         $arrAutos = $persona->getColObjAutos();//orm persona 1 ------- m Autos
                       

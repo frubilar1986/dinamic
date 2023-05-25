@@ -641,7 +641,7 @@ $(function () {
     })
     $('#tp4Eje6').bootstrapValidator({
         feedbackIcons: {
-            // valid: 'far fa-check-circle has-success help-success',
+            // valid: ' bi-reception-4 has-success help-success',
             valid: 'fa fa-regular fa-check has-success help-success',
 
             invalid: 'fa fa-poo has-error help-block',
@@ -654,74 +654,179 @@ $(function () {
                     notEmpty: {
                         message: ' No ingreso nada aqui! '
                     },
-                    
+
                     regexp: {
-                        message : 'Solo se admiten numeros!!'
+                        message: 'Solo se admiten numeros!!'
                     },
 
-                    stringLength : {
-                        min : 7,
-                        max : 8,
-                        message : 'entre 7 y 8 caracteres!! '
-                    },
-                    apellido: {
-                        validators: {
-                            notEmpty: {
-                                message: "No debe estar vacio"
-                            },
-                            regexp: {
-                                message: "Solo letras"
-                            }
-                        }
-                    },
-                    nombre: {
-                        validators: {
-                            notEmpty: {
-                                message: "No debe estar vacio"
-                            },
-                            regexp: {
-                                message: "Solo letras"
-                            }
-                        }
-                    },
-                    telefono: {
-                        validators: {
-                            notEmpty: {
-                                message: "No debe estar vacio"
-                            },
-                            regexp: {
-                                message: "Solo numero o muchos numeros"
-                            }
-                        }
-                    },
-        
-                    fechaNac: {
-                        validators: {
-        
-                            notEmpty: {
-                                message: "No debe estar vacio <br>"
-                            },
-                            date: {
-                                message: 'debe cumplir con el formato YYYY/MM/DD',
-                                format: 'DD/MM/YYYY'
-                            },
-                            
-                        }
-        
-                    },
-                    domicilio: {
-                        validators: {
-                            notEmpty: {
-                                message: "No debe estar vacio"
-                            },
-                            regexp: {
-                                message: "Solo numeros y letras"
-                            }
-                        }
+                    stringLength: {
+                        min: 7,
+                        max: 8,
+                        message: 'entre 7 y 8 caracteres!! '
                     },
 
                 }
-            }
+            },
+            apellido: {
+                validators: {
+                    notEmpty: {
+                        message: "No debe estar vacio"
+                    },
+                    regexp: {
+                        message: "Solo letras"
+                    }
+                }
+            },
+            nombre: {
+                validators: {
+                    notEmpty: {
+                        message: "No debe estar vacio"
+                    },
+                    regexp: {
+                        message: "Solo letras"
+                    }
+                }
+            },
+            telefono: {
+                validators: {
+                    notEmpty: {
+                        message: "No debe estar vacio"
+                    },
+                    regexp: {
+                        message: "Solo numero o muchos numeros"
+                    }
+                }
+            },
+
+            fechaNac: {
+                validators: {
+
+                    notEmpty: {
+                        message: "No debe estar vacio <br>"
+                    },
+                    date: {
+                        message: 'debe cumplir con el formato YYYY/MM/DD',
+                        format: 'DD/MM/YYYY'
+                    },
+
+                }
+
+            },
+            domicilio: {
+                validators: {
+                    notEmpty: {
+                        message: "No debe estar vacio"
+                    },
+                    regexp: {
+                        message: "Solo numeros y letras"
+                    }
+                }
+            },
+
+        }
+    })
+    $('#tp4Eje7').bootstrapValidator({
+        feedbackIcons: {
+            // valid: ' bi-reception-4 has-success help-success',
+            valid: 'fa fa-regular fa-check has-success help-success',
+
+            invalid: 'fa fa-poo has-error help-block',
+
+            validating: 'fa fa-circle '
+        },
+        fields: {
+            patente: {
+                validators: {
+                    notEmpty: {
+                        message: 'Dato requerido! '
+                    },
+
+                    regexp: {
+                        message: ' repetar formato: AAA 111 !!'
+                    },
+
+                   
+
+                },
+            },
+
+            marca: {
+                validators: {
+                    notEmpty: {
+                        message: 'NO debe estar vacio'
+                    },
+                    regexp: {
+                        message: 'Solo letras <br>'
+                    },
+
+                }
+            },
+            modelo: {
+                validators: {
+                    notEmpty: {
+                        message: 'NO debe estar vacio'
+                    },
+                    regexp: {
+                        message: 'Solo letras y numeros <br>'
+                    },
+
+                }
+            },
+            dniDuenio: {
+                validators: {
+                    notEmpty: {
+                        message: 'NO debe estar vacio'
+                    },
+                    regexp: {
+                        message: 'Solo  numeros <br>'
+                    },
+
+                }
+            },
+
+        }
+    })
+    $('#tp4Eje8').bootstrapValidator({
+        feedbackIcons: {
+            // valid: ' bi-reception-4 has-success help-success',
+            valid: 'fa fa-regular fa-check has-success help-success',
+
+            invalid: 'fa fa-poo has-error help-block',
+
+            validating: 'fa fa-circle '
+        },
+        fields: {
+            patente: {
+                validators: {
+                    notEmpty: {
+                        message: 'Dato requerido! '
+                    },
+
+                    regexp: {
+                        message: ' repetar formato: AAA 111 !! <br>'
+                    },
+
+                    stringLength: {
+                        max: 7,
+                        message : 'Se espera 3 letra y 3 nros'
+                    }
+
+                },
+            },
+
+            dniPersona: {
+                validators: {
+                    notEmpty: {
+                        message: 'NO debe estar vacio'
+                    },
+                    regexp: {
+                        message: 'Solo letras <br>'
+                    },
+
+                }
+            },
+         
+
         }
     })
 

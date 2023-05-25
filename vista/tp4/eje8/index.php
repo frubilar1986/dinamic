@@ -20,7 +20,7 @@ include_once "../../estructHtml/cabecera.php";
                 </div>
                 <div class=" d-flex justify-content-center card-body">
                     <!-- aqui tabla de seleccion de datos recuperados o que persisten desde la base de dato test -->
-                    <form action="cambioDuenio.php" method="post" id="tp4Eje8" class="was-validated" data-toggle="validator" novalidate>
+                    <form action="cambioDuenio.php" method="post" id="tp4Eje8" class="needs-validation" data-toggle="validator" novalidate>
                         <div class=''>
                             <div class='row'>
                                 <div class="col-md-6 mb-3">
@@ -29,13 +29,11 @@ include_once "../../estructHtml/cabecera.php";
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="exampleFormControlInput1" class="form-label">Dni Persona</label>
-                                        <input type="text" name="dniPersona" class="form-control" id="exampleFormControlInput1" pattern="^[0-9]{1,8}$" placeholder="" required>
+                                        <label for="exampleFormControlInput1" class="form-label">Dni </label>
+                                        <input type="text" name="dniPersona" class="form-control" id="exampleFormControlInput1" pattern="^[0-9]{1,8}$" placeholder="" maxlength="8" required>
                                     </div>
                                 </div>
-                            </div>
-
-
+                             </div>
 
                             <div>
                                 <button class="btn btn-primary" type="submit">Enviar</button>
