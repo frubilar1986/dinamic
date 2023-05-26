@@ -1,7 +1,7 @@
 <!-- index -->
 <?php $titulo = "Ejemplo PDO";
 include_once "../../estructHtml/cabecera.php";
-$objAbmTabla = new ctrol_tp4_abmPersona();
+$objAbmTabla = new abmPersona;
 $listaDatos = $objAbmTabla->buscar(null);
 ?>
 <div class="col-lg-12 py-1 px-1">

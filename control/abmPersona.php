@@ -47,7 +47,7 @@ class abmPersona
     private function seteadosCamposClaves($param)
     {
         $resp = false;
-        if (isset($param['dniPersona']))
+        if (isset($param['nroDni']))
             $resp = true;
         return $resp;
     }

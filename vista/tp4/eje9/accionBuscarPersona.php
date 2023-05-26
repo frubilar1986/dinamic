@@ -23,22 +23,22 @@ include_once "../../estructHtml/cabecera.php";
                         <?php
                         $resp = false;
                         $datosForm = datos_submitidos();
-                        // print_r($datosForm);
+                        //  print_r($datosForm);
                         $where['nroDni'] = $datosForm['nroDni'];
                         // $objCtrolAuto = new ctrol_tp4_abmAuto();
-                        $objctrolPers = new ctrol_tp4_abmPersona();
+                        $objctrolPers = new abmPersona();
                         $colPersonas = $objctrolPers->buscar($where);
-                        //$persona = $colPersonas[0];
+                        // $persona = $colPersonas[0];
                         if(count($colPersonas) == 1){
                             $persona = $colPersonas[0];
                         ?>
-                         <form action="actualizarDatosPersona.php" method="post" id="tp4Eje6" class="was-validated" data-toggle="validator" novalidate onsubmit="validaEdad()">
+                         <form action="actualizarDatosPersona.php" method="post" id="" class="was-validated" data-toggle="validator" novalidate onsubmit="">
                         <div>
                             <div class="row g-3">
 
                                 <div class="col-md-3 mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">DNI</label>
-                                    <input type="text" name="nroDni" readonly pattern="^[0-9]{1,8}$" class="form-control" value="<?= $persona->getNroDni() ?>"  id="" placeholder="" required>
+                                    <input type="text" name="nroDni" readonly  class="form-control" value="<?= $persona->getNroDni() ?>"  id="" placeholder="" >
                                 </div>
                                 <div class="col-md-3 mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Apellido</label>
@@ -64,7 +64,7 @@ include_once "../../estructHtml/cabecera.php";
                                     <input type="text" name="edad" readonly class="form-control"   id="edad"  placeholder=""  >
                                 </div>
                                 <div id="alerta" class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Oh No!</strong> La edad esta mal!!!!.
+                                <strong>Error!!!</strong> La edad esta mal!!!!.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                                 <div class="col-md-3 mb-3">

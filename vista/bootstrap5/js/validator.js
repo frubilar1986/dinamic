@@ -660,7 +660,7 @@ $(function () {
                     },
 
                     stringLength: {
-                        min: 7,
+                        min: 1,
                         max: 8,
                         message: 'entre 7 y 8 caracteres!! '
                     },
@@ -820,7 +820,7 @@ $(function () {
                         message: 'NO debe estar vacio'
                     },
                     regexp: {
-                        message: 'Solo letras <br>'
+                        message: 'Solo Numeros <br>'
                     },
 
                 }

@@ -17,6 +17,9 @@ include_once "../../estructHtml/cabecera.php";
                         ingresada en el formulario. Mostrar mensajes de error en caso de que el auto o la persona no se encuentren
                         cargados. Utilizar css y validaciones javaScript cuando crea conveniente. Recordar usar la capa de control
                         antes generada, no se puede acceder directamente a las clases del ORM.</p>
+                        <p class=" text-primary bg-warning text-center p-3 display-6 ">
+                            Ingrese los datos  del vehiculo a tranferir y Dni de destinatario.
+                        </p>
                 </div>
                 <div class=" d-flex justify-content-center card-body">
                     <!-- aqui tabla de seleccion de datos recuperados o que persisten desde la base de dato test -->

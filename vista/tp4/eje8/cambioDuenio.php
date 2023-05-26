@@ -43,20 +43,24 @@ include_once "../../estructHtml/cabecera.php";
                             // viewArray($arregloPersonas);
 
                             if (count($personas) == 1) {
-                                $objAuto = $autos[0];
-                                $objPersona = $personas[0];
+                                $auto = $autos[0];
+                                $persona = $personas[0];
 
                                 // print_r($objAuto);
                                 // print_r($objPersona);
-                                if ($objAuto->getObjPersona()->getNroDni() == $objPersona->getNroDni()) {
-                                    echo " <p class = 'h2 alert alert-danger'> El auto ya pertenece a " . $objPersona->getNombre() . " !</p>";
+                                if ($auto->getObjPersona()->getNroDni() == $persona->getNroDni()) {
+                                    // echo " <p class = 'h2 alert alert-danger'> El auto ya pertenece a " . $persona->getNombre() . " !</p>";
+                                    echo'<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                  </div>';
                                 } else {
 
                                     $arrAuto = [
-                                        'patente' => $objAuto->getPatente(),
-                                        'marca' => $objAuto->getMarca(),
-                                        'modelo' => $objAuto->getModelo(),
-                                        'dniDuenio' => $objPersona->getNroDni()
+                                        'patente' => $auto->getPatente(),
+                                        'marca' => $auto->getMarca(),
+                                        'modelo' => $auto->getModelo(),
+                                        'dniDuenio' => $persona->getNroDni()
                                     ];
 
                                     // echo 'antes de modificar  el modelo';
@@ -65,7 +69,11 @@ include_once "../../estructHtml/cabecera.php";
                                     $resp =  $abmAuto->modificacion($arrAuto);
                                 }
                             } else {
-                                echo " <p class = 'h2 alert alert-danger'> Numero de documento ingresado no pertenece a ninguna persona registrada!</p>";
+                                // echo " <p class = 'h2 alert alert-danger'> Numero de documento ingresado no pertenece a ninguna persona registrada!</p>";
+                                echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              </div>';
                             }
 
                             // $arrData2['nroDni'] = $arregloAutos[0]->getObjPersona()->getNroDni(); // ctrol si esxiste persona

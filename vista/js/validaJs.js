@@ -77,25 +77,26 @@ function ctrlJsEje7() {
 function validaEdad() {
 
     var campoEdad = document.getElementById('edad');
+    var alerta = document.getElementById('alerta');
     campoEdad.style.background = 'red';
     var fechaIngr = new Date(document.getElementById('fn').value)
     fechaIngr.setDate(fechaIngr.getDate() + 1);
     var fechaActual = new Date();
 
     var edadAct = fechaActual.getFullYear() - fechaIngr.getFullYear();
-     console.log(edadAct);
+    console.log(edadAct);
 
-    if( fechaIngr.getMonth() == fechaActual.getMonth()){
-        fechaIngr.getDay() > fechaActual.getDay() ? edadAct-- :''
+    if (fechaIngr.getMonth() == fechaActual.getMonth()) {
+        fechaIngr.getDay() > fechaActual.getDay() ? edadAct-- : ''
     }
 
-     fechaIngr.getMonth() > fechaActual.getMonth() ? edadAct-- :''  
+    fechaIngr.getMonth() > fechaActual.getMonth() ? edadAct-- : ''
 
     campoEdad.value = edadAct;
-     console.log(edadAct)
+    console.log(edadAct)
 
-     edadAct < 100 && edadAct > 18 ? campoEdad.style.background = '':''
-
+    edadAct < 100 && edadAct > 18 ? campoEdad.style.background = '' : alerta.style.display = 'inline'
+    return true
 }
 function deriva() {
 
