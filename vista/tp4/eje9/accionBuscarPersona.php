@@ -73,8 +73,8 @@ include_once "../../estructHtml/cabecera.php";
                                 </div>
                             </div>
                             <div>
-                                <button class="btn btn-primary" type="submit">Enviar</button>
-                                <button class="btn btn-secondary" type="reset">reset</button>
+                                <button class="btn btn-primary" type="submit">Guardar</button>
+                                <button class="btn btn-secondary" type="reset">Limpiar</button>
                             </div>
                         </div>
                     </form><?php }else{ 

@@ -21,19 +21,15 @@ include_once "../../estructHtml/cabecera.php";
 
                     <div class="alert alert-info">
                         <?php
+                        //obtengo datos del formulario 
                         $resp = false;
                         $datosForm = datos_submitidos();
-                        print_r($datosForm);
-                        // $arr = [
-                        //     'nroDni' => $datosForm['dniPersona'],
-                        //     'nombre' => $datosForm['nombre'],
-                        //     'apellido' => $datosForm['apellido'],
-                        //     'fechaNac' => $datosForm['fechaNac'],
-                        //     'domicilio' => $datosForm['domicilio'],
-                        //     'telefono' => $datosForm['telefono']
-                        // ];
+                       //Llamo ctrol personas
                         $abmPersona = new abmPersona;
+                        //modifica persona con los datos recibidos
                         $abmPersona->modificacion($datosForm);
+                        
+                        //Genero una tabla con los datos actualizados  
                         $arr2['nroDni'] = $datosForm['nroDni'];
                         $listaDatos = $abmPersona->buscar($arr2);
                         $persona = $listaDatos[0];

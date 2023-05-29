@@ -48,13 +48,15 @@ $listaDatos = $objAbmTabla->buscar(null);
                            echo "<th>Nombre</th>";
                            echo "<th>Domicilio</th>";
                            echo "<th>Nro Documento</th>";
-                          // echo "<th>Ver Vehiculo</th>";
+                           echo "<th>accion</th>";
 
                            foreach ($listaDatos as $objDatos) {
                                echo"<tr><td>".$objDatos->getApellido() ."</td>";
                                echo"<td>".$objDatos->getNombre(). "</td>";
                                echo"<td>".$objDatos->getDomicilio(). "</td>";
                                echo"<td>".$objDatos->getNroDni(). "</td>";
+                               echo"<td><a href= accionBuscarPersona.php?nroDni=".$objDatos->getNroDni()."><i class='bi bi-pencil-square'></i></a></td>";
+                              
                                // echo "<tr ><td>" . $objDatos->getDescrip() . "</td>";
                               // echo "<td><a class='link-primary' href='autosPersonas.php?nroDni=" . $objDatos->getNroDni() . "'>Vehiculo</a></td></tr>";
                                // echo "<td><a class='link-danger' href='accion.php?accion=borrar&id=" . $objDatos->getId() . "'>Borrar</a></td></tr>";
