@@ -43,6 +43,7 @@ $listaDatos = $objAbmTabla->buscar(null);
                 <table class="table table-success table-hover ">
                        
                        <?php
+                       echo '123456 <br>';
                        echo md5('123456');
                       
                         if (count($listaDatos) > 0) {

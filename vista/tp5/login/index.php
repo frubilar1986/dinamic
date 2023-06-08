@@ -20,7 +20,7 @@ include_once "../../estructHtml/cabecera.php";
                             <div class="card-body p-5 rounded shadow bg-white">
                                 <!-- <form action="accion.php" method="post" name="eje7" class="needs-validation" novalidate onsubmit="return ctrlJsEje7()"> -->
                                     <!-- FORMULIARIO -->
-                                <form action="verificaLog.php" method="post" id='tp5login' name="tp5login" class="was-validated" data-toggle="validator" novalidate onsubmit="">
+                                <form action="verificaLog.php" method="post" id='tp5log' name="tp5login" class="was-validated" data-toggle="validator" novalidate onsubmit="">
 
                                     <div class=''>
                                         <p class="h3 mb-3 text-warning" ><i class="fas fa-sign-in-alt "></i> Login</p>

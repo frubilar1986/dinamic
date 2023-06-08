@@ -131,9 +131,9 @@ class UsuarioRol
         if ($res > -1) {
             if ($res > 0) {
                 while ($row = $base->Registro()) {
-                    $usuarioRol = new usuarioRol();
-                    $usuario = new usuario();
-                    $rol = new Rol();
+                    $usuarioRol = new UsuarioRol;
+                    $usuario = new Usuario;
+                    $rol = new Rol;
                     
                     $usuario->setIdUsuario($row['idusuario']);
                     $usuario->cargar();

@@ -829,5 +829,48 @@ $(function () {
 
         }
     })
+    $('#tp5log').bootstrapValidator({
+        feedbackIcons: {
+            // valid: ' bi-reception-4 has-success help-success',
+            valid: 'fa fa-regular fa-check has-success help-success',
+
+            invalid: 'fa fa-poo has-error help-block',
+
+            validating: 'fa fa-circle '
+        },
+        fields: {
+            usnombre: {
+                validators: {
+                    notEmpty: {
+                        message: 'Dato obligatorio! '
+                    },
+
+                    regexp: {
+                        message: ' Solo texto!! <br>'
+                    },
+
+                    stringLength: {
+                        max: 10,
+                        message : 'No debe superar 7 letras'
+                    }
+
+                },
+            },
+
+            uspass: {
+                validators: {
+                    notEmpty: {
+                        message: 'NO debe estar vacio'
+                    },
+                    regexp: {
+                        message: 'Solo Numeros <br>'
+                    },
+
+                }
+            },
+         
+
+        }
+    })
 
 }); //fin funcion bootstrapValidator!
