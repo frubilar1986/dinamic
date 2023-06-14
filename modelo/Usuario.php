@@ -175,7 +175,7 @@ class Usuario
         if ($parametro != "") {
             $sql .= ' WHERE ' . $parametro;
         }
-        // echo $sql;
+         echo $sql;
         $res = $base->Ejecutar($sql);
         if ($res > -1) {
             if ($res > 0) {

@@ -243,6 +243,6 @@
                 </div>
                 <!-- Incluye scrip de funciones -->
                 <?php
-
+               
                 // include_once("../../../config.php");
                 ?>

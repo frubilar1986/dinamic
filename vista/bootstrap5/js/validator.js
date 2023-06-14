@@ -862,9 +862,9 @@ $(function () {
                     notEmpty: {
                         message: 'NO debe estar vacio'
                     },
-                    regexp: {
-                        message: 'Solo Numeros <br>'
-                    },
+                    // regexp: {
+                    //     message: 'Solo Numeros <br>'
+                    // },
 
                 }
             },

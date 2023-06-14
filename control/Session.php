@@ -26,28 +26,34 @@ class Session
     {
         $_SESSION['usnombre'] =  $us;
         $_SESSION['uspass'] = md5($pass);
+        $_SESSION['activa'] = false;
     }
 
     public function validar()
     {
         $msj = false;
         $abmUsuario = new AbmUsuario;
-        $usuarios = $abmUsuario->buscar($_SESSION['usnombre']);
-        print_r($usuarios[0]->getUsPass());
+        // echo '<br/>';
+        // print_r($_SESSION);
+        $usuarios = $abmUsuario->buscar($_SESSION);
+        //  print_r($usuarios[0]->getUsPass());
+        // print_r($usuarios);
         if (count($usuarios) == 1) {
             if ($usuarios[0]->getUsPass() == $_SESSION['uspass']) {
-                $_SESSION['usnombre'] = $usuarios[0]->getUsNombre();
-                $_SESSION['id'] = $usuarios[0]->getUsNombre();
-                echo ' sesiooooo';
+                // $_SESSION['usnombre'] = $usuarios[0]->getUsNombre();
+                $_SESSION['id'] = $usuarios[0]->getIdUsuario();
+                $_SESSION['activa'] = true;
+                // echo ' sesion cargada correcctamente ( class Session-> validar() )';
+                $msj = true;
             } else {
                 $this->setMsjError("error en la password");
             }
         } else {
             $this->setMsjError("error en el nombre de usuario");
         }
-        if (!isset($_SESSION['activa'])) {
-            session_destroy();
-        }
+        // if (!isset($_SESSION['activa'])) {
+        //     session_destroy();
+        // }
         return $msj;
     }
 
@@ -66,6 +72,7 @@ class Session
             $abmUsuario = new AbmUsuario();
             //$where['usnombre'] = $_SESSION['usuario'];
             $where['idusuario'] = $_SESSION['id'];
+            
             $colUsers = $abmUsuario->buscar($where);
 
             if (count($colUsers) == 1) {

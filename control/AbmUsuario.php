@@ -79,10 +79,10 @@ class AbmUsuario
         if ($param <> NULL) {
             if (isset($param['idusuario']))
                 $where .= " and idusuario  = " . $param['idusuario'];
-            if (isset($param['uspass']))
-                $where .= " and uspass = '" . $param['uspass'] . "'";
             if (isset($param['usnombre']))
                 $where .= " and usnombre = '" . $param['usnombre'] . "'";
+            if (isset($param['uspass']))
+                $where .= " and uspass = '" . $param['uspass'] . "'";
             //if  (isset($param['fechaNac']))
             //      $where.=" and fechaNac ='".$param['fechaNac']."'";
         }
