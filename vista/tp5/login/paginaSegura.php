@@ -26,6 +26,12 @@ if (isset($_SESSION['activa'])) {
                     <div class="card-body">
 
                         <h1>Pagina segura (?)</h1>
+                        <?php echo'<pre>'; print_r($_SESSION);echo '</pre>';
+                        
+                            $abmUsers = new AbmUsuario;
+                            $usuarios = $abmUsers->buscar(null);
+                            viewArray($usuarios);
+                        ?>
 
                     </div><!-- fin contenedor card-body del formulario -->
 
@@ -56,7 +62,7 @@ if (isset($_SESSION['activa'])) {
                         <h4 class="alert-heading">ERROR!</h4>
                         <p>Usuario no registrado, . This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
                         <hr>
-                        <p class="mb-0">Para poder registrarse haga click <a href="index.php">aqui</a></p>
+                        <p class="mb-0">Para poder registrarse haga click <a href="index.php">aqu&iacute;</a></p>
                     </div>
                 <?php
 

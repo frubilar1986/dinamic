@@ -37,11 +37,12 @@ class Session
         // print_r($_SESSION);
         $usuarios = $abmUsuario->buscar($_SESSION);
         //  print_r($usuarios[0]->getUsPass());
-        // print_r($usuarios);
+        //  print_r($usuarios);
         if (count($usuarios) == 1) {
-            if ($usuarios[0]->getUsPass() == $_SESSION['uspass']) {
+            $usuario = $usuarios[0];
+            if ($usuario->getUsPass() == $_SESSION['uspass']) { // esta validacion esta hecha en la query con los parqam d SESSION
                 // $_SESSION['usnombre'] = $usuarios[0]->getUsNombre();
-                $_SESSION['id'] = $usuarios[0]->getIdUsuario();
+                $_SESSION['id'] = $usuario->getIdUsuario();
                 $_SESSION['activa'] = true;
                 // echo ' sesion cargada correcctamente ( class Session-> validar() )';
                 $msj = true;
@@ -57,9 +58,10 @@ class Session
         return $msj;
     }
 
-    public function activa(){
+    public function activa()
+    {
         $msj = false;
-        session_status() == PHP_SESSION_ACTIVE? $msj = true: $msj = false;
+        session_status() == PHP_SESSION_ACTIVE ? $msj = true : $msj = false;
         return $msj;
     }
 
@@ -72,7 +74,7 @@ class Session
             $abmUsuario = new AbmUsuario();
             //$where['usnombre'] = $_SESSION['usuario'];
             $where['idusuario'] = $_SESSION['id'];
-            
+
             $colUsers = $abmUsuario->buscar($where);
 
             if (count($colUsers) == 1) {
@@ -90,19 +92,19 @@ class Session
      */
     public function getRol()
     {
-        $rol = null;//obj
+        $rol = null; //obj
         $usuario = $this->getUsuario();
         //print_r($objUsuario);
         if ($usuario == null) {
 
             $this->setMsjError('no hay usuario logueado');
         } else {
-           
+
             $where['idusuario'] = $usuario->getIdUsuario();
-           
+
             $usRol = new abmUsuarioRol();
             $colRol = $usRol->buscar($where);
-            
+
             $objRol = $colRol[0];
         }
         return $objRol;
@@ -111,7 +113,7 @@ class Session
     public function cerrar()
     {
         $msj = false;
-        if ( $this->activa()){
+        if ($this->activa()) {
             session_destroy();
             $msj = true;
         }
