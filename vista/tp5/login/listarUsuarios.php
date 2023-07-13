@@ -18,7 +18,7 @@ include_once "../../estructHtml/cabecera.php";
                     <table class="table table-success table-hover ">
                        
                         <?php
-                        $abmUsuarios = new ctrol_abmUsuario();
+                        $abmUsuarios = new abmUsuario();
                         $colUsuarios = $abmUsuarios->buscar(null);
                         if (count($colUsuarios) > 0) {
                             //si hay usuarios en bd creo encabezado tabla

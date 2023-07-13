@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- <script src="../../bootstrap5/js/bootstrap.min.js" type="text/javascript"></script>  -->
 
+    <!-- includes config and Session -->
+    <?php
+
+    include_once("../../../config.php");
+    $session = new Session;
+
+    ?>
 
     <title><?php echo $titulo ?></title>
 </head>
@@ -31,6 +38,7 @@
                     <div class="container d-flex justify-content-center ">
                         <p class="container-fluid"><span class="navbar-brand mb-0  text-warning ">FACULTAD DE INFORMATICA - PROGRAMACION WEB DINAMICA </span></p>
                     </div>
+
                 </nav>
             </div>
         </header>
@@ -142,7 +150,7 @@
                             <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                                 <!-- <i class="fs-4 bi-grid"></i> --> <i class="bi bi-journal-text"></i> <span class="ms-1 d-none d-sm-inline">Tp4</span>
                             </a>
-                            <ul class= " nav flex-column ms-1" id="submenu5" data-bs-parent="#menu"> <!-- FRAN! collapse eliminado: para que quede desplegado el menu -->
+                            <ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu"> <!-- FRAN! collapse eliminado: para que quede desplegado el menu -->
                                 <!-- <li class="w-100">
                                         <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
                                     </li> -->
@@ -181,8 +189,63 @@
                                 </li> -->
                             </ul>
                         </li>
+                        <li>
+                            <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                <!-- <i class="fs-4 bi-grid"></i> --> <i class="bi bi-journal-text"></i> <span class="ms-1 d-none d-sm-inline">Tp5</span>
+                            </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu6" data-bs-parent="#menu"> <!-- FRAN! collapse eliminado: para que quede desplegado el menu -->
+                                <!-- <li class="w-100">
+                                        <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                                    </li> -->
+                                <li>
+                                    <a href="../../tp5/login/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Login </span> </a>
+                                </li>
+                                <?php
+                                if (isset($_SESSION['activa'])) { ?>
+                                    <li>
+                                        <a href="../../tp5/login/listarUsuarios.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Listar Ususarios </span> </a>
+                                    </li>
+                                    <?php
+                                        }
+                                        ?>
 
-                       
+                                <li>
+                                    <a href="../../tp5/login/login2.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Login2 </span> </a>
+                                </li>
+                                <!-- <li>
+                                    <a href="../../tp4/eje3/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Ver autos </span> </a>
+                                </li>
+                                <li>
+                                    <a href="../../tp4/eje4/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Buscar vehiculo </span></a>
+                                </li>
+                                <li>
+                                    <a href="../../tp4/eje5/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Listar Personas </span></a>
+                                </li>
+                                <li>
+                                    <a href="../../tp4/eje6/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Nueva Persona</span> </a>
+                                </li>
+                                <li>
+                                    <a href="../../tp4/eje7/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Nuevo Auto</span> </a>
+                                </li>
+                                <li>
+                                    <a href="../../tp4/eje8/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Cambio Due&ntilde;o</span> </a>
+                                </li>
+                                <li>
+                                    <a href="../../tp4/eje9/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Buscar Persona</span> </a>
+                                </li> -->
+                                <!-- <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
+                                </li> -->
+                            </ul>
+                        </li>
+
+
 
 
                     </div>
@@ -190,5 +253,5 @@
                 <!-- Incluye scrip de funciones -->
                 <?php
 
-                include_once("../../../config.php");
+                // include_once("../../../config.php");
                 ?>
