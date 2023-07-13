@@ -21,10 +21,10 @@
     <?php
 
     include_once("../../../config.php");
-        $session = new Session;
-        
+    $session = new Session;
+
     ?>
-    
+
     <title><?php echo $titulo ?></title>
 </head>
 <hr>
@@ -200,6 +200,15 @@
                                 <li>
                                     <a href="../../tp5/login/index.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Login </span> </a>
                                 </li>
+                                <?php
+                                if (isset($_SESSION['activa'])) { ?>
+                                    <li>
+                                        <a href="../../tp5/login/listarUsuarios.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Listar Ususarios </span> </a>
+                                    </li>
+                                    <?php
+                                        }
+                                        ?>
+
                                 <li>
                                     <a href="../../tp5/login/login2.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Login2 </span> </a>
                                 </li>
@@ -243,6 +252,6 @@
                 </div>
                 <!-- Incluye scrip de funciones -->
                 <?php
-               
+
                 // include_once("../../../config.php");
                 ?>

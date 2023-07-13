@@ -11,8 +11,9 @@ include_once "../../estructHtml/cabecera.php";
                 <!--inicio clase card-->
                 <div class="card-header"><span class="text-danger">Iniciar session: TP5</span>
                     <p>Formulario de login para validar credenciales usando base de datos con variable session de php. exitos! </p>
-                    <?php //$pass= md5("cata2015");echo $pass
-                    print_r($_SESSION);
+                    <?php //$pass= md5("francisco");
+                    //echo $pass;
+                     print_r($_SESSION);
                     // $pass= md5("123456");echo $pass
                     ?>
 
@@ -27,8 +28,7 @@ include_once "../../estructHtml/cabecera.php";
                                 <form action="verificaLog.php" method="post" id='tp5log' name="tp5log" class="was-validated" data-toggle="validator" novalidate onsubmit="">
 
                                     <div class=''>
-                                        <?php
-                                            
+                                        <?php                                            
                                            if( isset($_SESSION['activa'])){
                                                  echo $_SESSION['usnombre'];
                                            }    
@@ -42,8 +42,6 @@ include_once "../../estructHtml/cabecera.php";
                                             <input type="password" class="form-control" id="floatingPassword" name="uspass" placeholder="uspass" required>
                                             <label for="floatingPassword" class="text-muted "><i class="bi bi-key-fill "></i> Password</label>
                                         </div>
-
-
                                     </div>
                                     <div class="d-grid gap-2 col-9 mx-auto pt-3">
                                         <button class="btn btn-success " type="submit">Enviar</button>
@@ -58,7 +56,7 @@ include_once "../../estructHtml/cabecera.php";
 
                                 ?>
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>Error al iniciar!</strong> Su usuario/contrasena no son correctas.
+                                        <strong>Error al iniciar!</strong> Su usuario/contrase&ntilde;a no <span>coinciden..!</span>.
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php }

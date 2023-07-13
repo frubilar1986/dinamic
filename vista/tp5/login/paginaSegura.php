@@ -1,5 +1,6 @@
 <?php
 
+$titulo = 'pagina segura';
 
 include('../../estructHtml/cabecera.php');
 // include ('../../../utiles/funciones.php');
@@ -25,12 +26,14 @@ if (isset($_SESSION['activa'])) {
                     </div>
                     <div class="card-body">
 
-                        <h1>Pagina segura (?)</h1>
-                        <?php echo'<pre>'; print_r($_SESSION);echo '</pre>';
+                        <h1 class="text-center">Pagina segura (?)</h1>
+                        <?php echo '<pre>';
+                        print_r($_SESSION);
+                        echo '</pre>';
+
+                        $rol = $session->getRol();
+                           viewArray($rol);
                         
-                            $abmUsers = new AbmUsuario;
-                            $usuarios = $abmUsers->buscar(null);
-                            viewArray($usuarios);
                         ?>
 
                     </div><!-- fin contenedor card-body del formulario -->

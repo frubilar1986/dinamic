@@ -24,10 +24,10 @@ class AbmUsuarioRol
             $objRol->cargar();
 
             $obj = new UsuarioRol();
-            // $datos = [
-            //     'objusuario' => $objUsuario,
-            //     'objrol' => $objRol,
-            // ];
+            //  $datos = [
+            //      'objusuario' => $objUsuario,
+            //      'objrol' => $objRol,
+            //  ];
 
             $obj->setear($objUsuario, $objRol);
         }

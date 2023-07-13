@@ -116,9 +116,9 @@ class Usuario
     {
         $resp = false;
         $base = new dbLogin();
-        $sql = "INSERT INTO usuario ( usnombre,uspass, usmail) VALUES ('" . $this->getUsNombre() . "'," . $this->getUsPass() . ",'" . $this->getUsMail() . "')";
+        $sql = "INSERT INTO usuario ( usnombre,uspass, usmail) VALUES ('" . $this->getUsNombre() . "','" . $this->getUsPass() . "','" . $this->getUsMail() . "')";
 
-        //echo $sql;
+        // echo $sql;
         if ($base->Iniciar()) {
             if ($elId = $base->Ejecutar($sql)) {
                 $this->setIdUsuario($elId);

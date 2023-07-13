@@ -10,11 +10,12 @@ if (array_key_exists('accion', $_GET) && $_GET['accion'] == 'cerrar') {
     header('location:index.php?code=1');
 
 } else {
+    
+    $sesion->iniciar($dataForm['usnombre'], $dataForm['uspass']);
+    
     if (isset($dataForm['accion']) && $dataForm['accion'] == 'new') {
         
     }
-
-    $sesion->iniciar($dataForm['usnombre'], $dataForm['uspass']);
 
     if ($sesion->validar()) {
 

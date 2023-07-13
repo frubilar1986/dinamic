@@ -7,10 +7,10 @@ class AbmUsuario
     {
         $usuario = null;
 
-        if (array_key_exists('id', $param) and array_key_exists('usnombre', $param) and array_key_exists('uspass', $param) and array_key_exists('usmail', $param) and array_key_exists('usdeshabilitado', $param)) {
+        if (array_key_exists('idusuario', $param) and array_key_exists('usnombre', $param) and array_key_exists('uspass', $param) and array_key_exists('usmail', $param) and array_key_exists('usdeshabilitado', $param)) {
             $usuario = new Usuario();
 
-            $usuario->setear($param['id'], $param['usnombre'], $param['uspass'], $param['usmail'], $param['usdeshabilitado'], true);
+            $usuario->setear($param['idusuario'], $param['usnombre'], $param['uspass'], $param['usmail'], $param['usdeshabilitado'], true);
         }
         return $usuario;
     }
@@ -43,6 +43,12 @@ class AbmUsuario
 
         if ($usuario != null and $usuario->insertar()) {
             $resp = true;
+            $abmUsuarioRol = new AbmUsuarioRol;
+            $arr = [
+                'idusuario' => $usuario->getIdUsuario(),
+                'idrol' => '3',
+            ];
+            $abmUsuarioRol->alta($arr);
         }
         return $resp;
     }

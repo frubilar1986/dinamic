@@ -44,6 +44,7 @@ class Session
                 // $_SESSION['usnombre'] = $usuarios[0]->getUsNombre();
                 $_SESSION['id'] = $usuario->getIdUsuario();
                 $_SESSION['activa'] = true;
+                unset($_SESSION['uspass']);
                 // echo ' sesion cargada correcctamente ( class Session-> validar() )';
                 $msj = true;
             } else {
@@ -69,7 +70,7 @@ class Session
     public function getUsuario()
     {
         $usuario = null;
-        if ($this->activa() && $this->validar()) {
+        if ($this->activa()) {
             //echo 'entroooo';//--------------------------------------------------
             $abmUsuario = new AbmUsuario();
             //$where['usnombre'] = $_SESSION['usuario'];
@@ -94,7 +95,7 @@ class Session
     {
         $rol = null; //obj
         $usuario = $this->getUsuario();
-        //print_r($objUsuario);
+        // print_r($usuario);
         if ($usuario == null) {
 
             $this->setMsjError('no hay usuario logueado');
@@ -105,9 +106,9 @@ class Session
             $usRol = new abmUsuarioRol();
             $colRol = $usRol->buscar($where);
 
-            $objRol = $colRol[0];
+            $rol = $colRol[0]->getObjUsuario()->getIdUsuario();
         }
-        return $objRol;
+        return $rol;
     }
 
     public function cerrar()

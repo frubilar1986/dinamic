@@ -24,7 +24,7 @@ include_once "../../estructHtml/cabecera.php";
                             <div class="card-body p-5 rounded shadow bg-white">
                                 <!-- <form action="accion.php" method="post" name="eje7" class="needs-validation" novalidate onsubmit="return ctrlJsEje7()"> -->
                                 <!-- FORMULIARIO -->
-                                <form action="verificaLog.php" method="post" id='tp5log' name="tp5log" class="was-validated" data-toggle="validator" novalidate onsubmit="">
+                                <form action="nuevoUsAccion.php" method="post" id='newUs' name="newUs" class="was-validated" data-toggle="validator" novalidate onsubmit="">
 
                                     <div class=''>
                                         <?php
@@ -33,26 +33,31 @@ include_once "../../estructHtml/cabecera.php";
 
                                             <div class="alert alert-warning
                                             " role="alert">
-                                                <h4 class="alert-heading">Atencion !! <?php echo strtoupper( $_SESSION['usnombre'])?></h4>
+                                                <h4 class="alert-heading">Atencion !! <?php echo strtoupper($_SESSION['usnombre']) ?></h4>
                                                 <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
                                                 <hr>
-                                                <p class="mb-2">Su datos existen en el sistema. Antes debe cerrar la sesion actual.</p>
+                                                <p class="mb-2">Su datos existen en el sistema. Antes de continuar debe cerrar la sesion actual.</p>
                                                 <a href="verificaLog.php?accion=cerrar"> <button type="button" class="btn btn-outline-danger">Cerrar session</button></a>
                                             </div>
+
                                         <?php } else { ?>
                                             <p class="h3 mb-3 text-warning "><i class="fas fa-user "> Nuevo usuario </i> <?php ?></p>
-                                            
+
                                             <div class="form-floating col-md-11 mb-3">
                                                 <input type="text" class="form-control" id="floatingInput" name="usnombre" pattern="^[A-Za-z ]*$" placeholder="username" autocomplete="off" required>
                                                 <label for="floatingInput " class="text-muted"> <i class="bi bi-person"></i> Nombre</label>
                                             </div>
                                             <div>
-                                                <input type="hidden" name = 'accion' value="new">
+                                                <input type="hidden" name='accion' value="new">
                                             </div>
-                                         
+
                                             <div class="form-floating col-md-11 mb-3">
                                                 <input type="password" class="form-control" id="floatingPassword" name="uspass" placeholder="uspass" required>
                                                 <label for="floatingPassword" class="text-muted "><i class="bi bi-key-fill "></i> Password</label>
+                                            </div>
+                                            <div class="form-floating col-md-11 mb-3">
+                                                <input type="repitpassword" class="form-control" id="floatingPassword2" name="uspass2" placeholder="uspass" required>
+                                                <label for="floatingPassword2" class="text-muted "><i class="bi bi-key-fill "></i> Repit Password</label>
                                             </div>
                                             <div class="form-floating col-md-11 mb-3">
                                                 <input type="text" class="form-control" id="floatingInput" name="usmail" pattern="^[A-Za-z ]*$" placeholder="username" autocomplete="off" required>
