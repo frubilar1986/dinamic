@@ -13,7 +13,7 @@ include_once "../../estructHtml/cabecera.php";
                     <p>Formulario de login para validar credenciales usando base de datos con variable session de php. exitos! </p>
                     <?php //$pass= md5("francisco");
                     //echo $pass;
-                     print_r($_SESSION);
+                    print_r($_SESSION);
                     // $pass= md5("123456");echo $pass
                     ?>
 
@@ -28,10 +28,10 @@ include_once "../../estructHtml/cabecera.php";
                                 <form action="verificaLog.php" method="post" id='tp5log' name="tp5log" class="was-validated" data-toggle="validator" novalidate onsubmit="">
 
                                     <div class=''>
-                                        <?php                                            
-                                           if( isset($_SESSION['activa'])){
-                                                 echo $_SESSION['usnombre'];
-                                           }    
+                                        <?php
+                                        if (isset($_SESSION['activa'])) {
+                                            echo $_SESSION['usnombre'];
+                                        }
                                         ?>
                                         <p class="h3 mb-3 text-warning "><i class="fas fa-sign-in-alt "> Login</i> <?php ?></p>
                                         <div class="form-floating col-md-11 mb-3">
@@ -60,9 +60,32 @@ include_once "../../estructHtml/cabecera.php";
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                 <?php }
+                                if (array_key_exists('code', $_GET) && $_GET['code'] == 10) {
+
+                                ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <h4 class="alert-heading">Exelente!</h4>
+                                        <p>Usted ya es usuario del sistema, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                        <hr>
+                                        <p class="mb-0">Ingrese sus datos de registro nuevamente.</p>
+                                    </div>
+                                <?php }
+                                if (array_key_exists('code', $_GET) && $_GET['code'] == 20) {
+
+                                ?>
+                                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                                            <use xlink:href="#exclamation-triangle-fill" />
+                                        </svg>
+                                        <div>
+                                            El registro al sistema a fallado!! 
+                                        </div>
+                                    </div>
+                                <?php }
+
                                 if (isset($_SESSION['activa'])) {
                                 ?>
-                                   <a href="verificaLog.php?accion=cerrar"> <button type="button" class="btn btn-outline-danger">Cerrar session</button></a>
+                                    <a href="verificaLog.php?accion=cerrar"> <button type="button" class="btn btn-outline-danger">Cerrar session</button></a>
                                 <?php }  ?>
                             </div>
                         </div>

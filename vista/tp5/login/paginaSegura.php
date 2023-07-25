@@ -27,7 +27,8 @@ if (isset($_SESSION['activa'])) {
                     <div class="card-body">
 
                         <h1 class="text-center">Pagina segura (?)</h1>
-                        <?php echo '<pre>';
+                        <?php 
+                        echo '<pre>';
                         print_r($_SESSION);
                         echo '</pre>';
 
@@ -35,6 +36,7 @@ if (isset($_SESSION['activa'])) {
                            viewArray($rol);
                         
                         ?>
+                        <a href="editUser.php"> <button type="button" class="btn btn-danger">Editar mis datos</button></a>
 
                     </div><!-- fin contenedor card-body del formulario -->
 

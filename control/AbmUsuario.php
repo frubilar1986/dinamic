@@ -29,7 +29,7 @@ class AbmUsuario
     private function seteadosCamposClaves($param)
     {
         $resp = false;
-        if (isset($param['id']))
+        if (isset($param['idusuario']))
             $resp = true;
         return $resp;
     }
@@ -46,7 +46,7 @@ class AbmUsuario
             $abmUsuarioRol = new AbmUsuarioRol;
             $arr = [
                 'idusuario' => $usuario->getIdUsuario(),
-                'idrol' => '3',
+                'idrol' => '5',
             ];
             $abmUsuarioRol->alta($arr);
         }

@@ -13,9 +13,9 @@ if (array_key_exists('accion', $_GET) && $_GET['accion'] == 'cerrar') {
     
     $sesion->iniciar($dataForm['usnombre'], $dataForm['uspass']);
     
-    if (isset($dataForm['accion']) && $dataForm['accion'] == 'new') {
+    // if (isset($dataForm['accion']) && $dataForm['accion'] == 'new') {
         
-    }
+    // }
 
     if ($sesion->validar()) {
 

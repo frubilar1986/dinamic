@@ -40,7 +40,7 @@ class Session
         //  print_r($usuarios);
         if (count($usuarios) == 1) {
             $usuario = $usuarios[0];
-            if ($usuario->getUsPass() == $_SESSION['uspass']) { // esta validacion esta hecha en la query con los parqam d SESSION
+            if ($usuario->getUsPass() == $_SESSION['uspass']) { // esta validacion  la realiza la BD al buscar con los param d SESSION
                 // $_SESSION['usnombre'] = $usuarios[0]->getUsNombre();
                 $_SESSION['id'] = $usuario->getIdUsuario();
                 $_SESSION['activa'] = true;
@@ -80,10 +80,10 @@ class Session
 
             if (count($colUsers) == 1) {
 
-                $objUsuario = $colUsers[0];
+                $usuario = $colUsers[0];
             }
         }
-        return $objUsuario;
+        return $usuario;
     }
 
 
