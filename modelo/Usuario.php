@@ -116,9 +116,9 @@ class Usuario
     {
         $resp = false;
         $base = new dbLogin();
-        $sql = "INSERT INTO usuario ( usnombre,uspass, usmail) VALUES ('" . $this->getUsNombre() . "','" . $this->getUsPass() . "','" . $this->getUsMail() . "')";
+        $sql = "INSERT INTO usuario ( usnombre,uspass, usmail, usdeshabilitado) VALUES ('" . $this->getUsNombre() . "','" . $this->getUsPass() . "','" . $this->getUsMail() . "','".$this->getUsDeshabilitado()."')";
 
-        // echo $sql;
+         echo $sql;
         if ($base->Iniciar()) {
             if ($elId = $base->Ejecutar($sql)) {
                 $this->setIdUsuario($elId);
@@ -137,8 +137,8 @@ class Usuario
     {
         $resp = false;
         $base = new dbLogin();
-        $sql = "UPDATE usuario SET usnombre='" . $this->getUsNombre() . "',uspass=" . $this->getUsPass() . ",usmail='" . $this->getUsMail() . "',  WHERE idusuario= " . $this->getIdUsuario();
-        //echo $sql;
+        $sql = "UPDATE usuario SET usnombre='" . $this->getUsNombre() . "',uspass='" . $this->getUsPass() . "',usmail='" . $this->getUsMail() . "'  WHERE idusuario= " . $this->getIdUsuario();
+        // echo $sql;
         if ($base->Iniciar()) {
             if ($base->Ejecutar($sql)) {
                 $resp = true;

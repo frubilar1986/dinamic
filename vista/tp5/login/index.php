@@ -31,20 +31,25 @@ include_once "../../estructHtml/cabecera.php";
                                         <?php
                                         if (isset($_SESSION['activa'])) {
                                             echo $_SESSION['usnombre'];
-                                        }
+                                           
+
+
                                         ?>
-                                        <p class="h3 mb-3 text-warning "><i class="fas fa-sign-in-alt "> Login</i> <?php ?></p>
+                                            <p class="h3 mb-3 text-warning "><i class="fas fa-sign-in-alt "> Login</i> <?php ?></p>
+                                        <?php } else { ?>
                                         <div class="form-floating col-md-11 mb-3">
-                                            <input type="text" class="form-control" id="floatingInput" name="usnombre" pattern="^[A-Za-z ]*$" placeholder="username" autocomplete="off" required>
+                                            <input type="text"  class="form-control" id="floatingInput" name="usnombre" pattern="^[A-Za-z ]*$" placeholder="username" autocomplete="off" required>
                                             <label for="floatingInput " class="text-muted"> <i class="bi bi-person"></i> Username</label>
                                         </div>
                                         <div class="form-floating col-md-11">
                                             <input type="password" class="form-control" id="floatingPassword" name="uspass" placeholder="uspass" required>
                                             <label for="floatingPassword" class="text-muted "><i class="bi bi-key-fill "></i> Password</label>
                                         </div>
+                                      
                                     </div>
                                     <div class="d-grid gap-2 col-9 mx-auto pt-3">
                                         <button class="btn btn-success " type="submit">Enviar</button>
+                                        <?php }?>
                                         <a class='d-flex justify-content-end' href="nuevoUsuario.php"> Nuevo usuario</a>
                                         <!-- <button class="btn btn-primary" type="button">Button</button> -->
                                     </div>
@@ -78,7 +83,7 @@ include_once "../../estructHtml/cabecera.php";
                                             <use xlink:href="#exclamation-triangle-fill" />
                                         </svg>
                                         <div>
-                                            El registro al sistema a fallado!! 
+                                            El registro al sistema a fallado!!
                                         </div>
                                     </div>
                                 <?php }

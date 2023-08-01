@@ -27,6 +27,8 @@ class Session
         $_SESSION['usnombre'] =  $us;
         $_SESSION['uspass'] = md5($pass);
         $_SESSION['activa'] = false;
+        $_SESSION['rol'] = 5;
+        
     }
 
     public function validar()
@@ -44,6 +46,7 @@ class Session
                 // $_SESSION['usnombre'] = $usuarios[0]->getUsNombre();
                 $_SESSION['id'] = $usuario->getIdUsuario();
                 $_SESSION['activa'] = true;
+                $_SESSION['rol'] = $this->getRol();
                 unset($_SESSION['uspass']);
                 // echo ' sesion cargada correcctamente ( class Session-> validar() )';
                 $msj = true;
