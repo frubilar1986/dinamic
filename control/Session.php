@@ -109,7 +109,7 @@ class Session
             $usRol = new abmUsuarioRol();
             $colRol = $usRol->buscar($where);
 
-            $rol = $colRol[0]->getObjUsuario()->getIdUsuario();
+            $rol = $colRol[0]->getObjRol()->getIdRol();
         }
         return $rol;
     }

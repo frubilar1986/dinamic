@@ -11,7 +11,7 @@ include_once "../../estructHtml/cabecera.php";
                 <!--inicio clase card-->
                 <div class="card-header"><span class="text-danger">Iniciar session: TP5</span>
                     <p>Crear nuevo usuario </p>
-                 
+
                 </div>
                 <br>
                 <div class="container ">
@@ -20,47 +20,65 @@ include_once "../../estructHtml/cabecera.php";
                             <div class="card-body p-5 rounded shadow bg-white">
                                 <!-- <form action="accion.php" method="post" name="eje7" class="needs-validation" novalidate onsubmit="return ctrlJsEje7()"> -->
                                 <!-- FORMULIARIO -->
-                                <form action="nuevoUsAccion.php" method="post" id="" name="" class="was-validated" data-toggle="" novalidate onsubmit="">
-                                <p class="h3 mb-3 text-warning "><i class="fas fa-user "> Editar mis datos </i> <?php ?></p>
-                                   
-                                        <?php
+                                <form action="delete.php" method="post" id="" name="" class="was-validated" data-toggle="" novalidate onsubmit="">
+                                    <p class="h3 mb-3 text-warning "><i class="fas fa-user "> Editar mis datos </i> <?php ?></p>
+                                    <?php
+                                    $abmUsuario = new AbmUsuario;
+                                    if (array_key_exists('id', $_GET)) {
 
-                                        if (isset($_SESSION['activa'])) {
+                                        $where = [
+                                            'idusuario' => $_GET['id']
+                                        ];
+                                        $usuarios = $abmUsuario->buscar($where);
+                                        $usuario = $usuarios[0];
+                                        print_r($usuario);
+                                    } else {
 
-                                             $usuario = $session->getUsuario();
-                                             echo $usuario->getUsPass();
-                                            print_r($usuario);
-                                        ?>
+                                        // if (isset($_SESSION['activa'])) {
 
-                                            <div class="form-floating col-md-11 mb-3">
-                                                <input type="text" value="<?= $usuario->getUsnombre()?>" class="form-control" id="floatingInput" name="usnombre" pattern="^[A-Za-z ]*$" placeholder="Nombre" autocomplete="off" required>
-                                                <label for="floatingInput " class="text-muted"> <i class="bi bi-person"></i> Nombre</label>
-                                            </div>
-                                            <div>
-                                                <input type="hidden" name='accion' value="edit">
-                                                <input type="hidden" name='uspass' value="<?php echo $usuario->getUsPass()?>">
-                                            </div>
+                                        $usuario = $session->getUsuario();
+                                        //  echo $usuario->getUsPass();
+                                        // }
+                                        // print_r($usuario);
+                                    } ?>
 
-                                            <div class="form-floating col-md-11 mb-3">
-                                                <input type="text" value="<?= $usuario->getUsMail() ?>" class="form-control" id="floatingPassword" name="usmail" placeholder="uspass" required>
-                                                <label for="floatingPassword" class="text-muted "><i class="bi bi-key-fill "></i> Email</label>
-                                            </div>
-                                          <?php }?>
+                                    <div class="form-floating col-md-11 mb-3">
+                                        <input type="text" value="<?= $usuario->getUsNombre() ?>" class="form-control" id="floatingInput" name="usnombre" pattern="^[A-Za-z ]*$" placeholder="Nombre" autocomplete="off" required>
+                                        <label for="floatingInput " class="text-muted"> <i class="bi bi-person"></i> Nombre</label>
+                                    </div>
+                                    <div>
+
+                                        <input type="hidden" name='accion' value="edit">
+
+                                        <input type="hidden" name='uspass' value="<?= $usuario->getUsPass() ?>">
+
+                                        <input type="hidden" name='id' value="<?= $usuario->getIdUsuario() ?>">
+                                    </div>
+
+                                    <div class="form-floating col-md-11 mb-3">
+                                        <input type="text" value="<?php echo $usuario->getUsMail() ?>" class="form-control" id="floatingPassword" name="usmail" placeholder="uspass" required>
+                                        <label for="floatingPassword" class="text-muted "><i class="bi bi-key-fill "></i> Email</label>
+                                    </div>
 
 
-                                   
+
+
                                     <div class="d-grid gap-2 col-9 mx-auto pt-3">
                                         <button class="btn btn-success " type="submit">Enviar</button>
                                         <!-- <a class='d-flex justify-content-end' href="#"> Nuevo usuario</a> -->
                                         <!-- <button class="btn btn-primary" type="button">Button</button> -->
                                     </div>
-                                    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+
 
                                 </form>
+                                <?php if ($_SESSION['rol'] == 1) {
+
+                                    echo "<a href='delete.php?id=" . $usuario->getIdUsuario() . "&accion=delete' ><button class='mx-auto mt-3 btn btn-danger'>eliminar usuario</button></a>";
+                                } ?>
 
                                 <!-- <a href="verificaLog.php?accion=cerrar"> <button type="button" class="btn btn-outline-danger">Cerrar session</button></a>
                                 <a href="index.php"> <button type="button" class="btn btn-outline-danger">Login</button></a> -->
-                            <?php   ?>
+                                <?php   ?>
                             </div>
                         </div>
                     </div>
@@ -75,7 +93,7 @@ include_once "../../estructHtml/cabecera.php";
         </script>
         <div class="">
 
-        <?php
-        include_once "../../estructHtml/pie.php";
-        ?>
+            <?php
+            include_once "../../estructHtml/pie.php";
+            ?>
         </div>

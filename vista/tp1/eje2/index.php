@@ -15,7 +15,7 @@ include_once "../../estructHtml/cabecera.php";
                             se cursan por semana.</p>
                 </div>
                 <div class="card-body">
-                    <form action="accion.php" method="post" name="form_eje2" class=" needs-validation" novalidate onsubmit="return valHsPwd()">
+                    <form action="accion.php" method="get" name="form_eje2" class=" needs-validation" novalidate onsubmit="">
                         <div class="row g-3 ">
                             <div class="col-md-3 mb-3">
                                 <label class = "form-label" for="0">Lunes:</label>

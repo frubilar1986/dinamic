@@ -15,6 +15,7 @@ include_once "../../estructHtml/cabecera.php";
                 <div class="card-body">
                     <!-- aqui tabla de seleccion de datos recuperados o que persisten desde la base de dato test -->
                     <p class='h3 text-info text-center'>Lista de datos</p>
+                    <?php print_r($_SESSION)?>
                     <table class="table table-success table-hover ">
                        
                         <?php
@@ -29,6 +30,7 @@ include_once "../../estructHtml/cabecera.php";
                                if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 4){
 
                                    echo" <th>Editar</th>";
+                                   echo" <th>Estado</th>";
                                }
                            }
                            //echo" <th>Apellido Propietario</th>";
@@ -39,6 +41,7 @@ include_once "../../estructHtml/cabecera.php";
                                 if(isset($_SESSION['rol'])){
                                     if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 4){
      
+                                        echo "<td>" . "<a class='btn btn-primary' href='editUser.php?id=". $objUser->getIdUsuario()."'><i class='fas fa-pen-square'></i></a>" . "</td>";
                                         echo "<td>" . "<a class='btn btn-primary' href='#'><i class='fas fa-pen-square'></i></a>" . "</td>";
                                     }
                                 }

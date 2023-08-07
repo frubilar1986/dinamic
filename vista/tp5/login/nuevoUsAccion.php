@@ -7,15 +7,22 @@ $session = new Session;
 //  print_r($dataForm);
 if (isset($_SESSION['activa']) && $dataForm['accion'] == 'edit') {
 
+    
+    if($dataForm['id'] != $_SESSION['id']){
+        $id = $dataForm['id'];
+    }else{
+        $id = $_SESSION['id'];
+    }
+
     $user = [
-        'idusuario' => $_SESSION['id'],
+        'idusuario' => $id,
         'usnombre' => $dataForm['usnombre'],
         'uspass' => $dataForm['uspass'],
         'usmail' => $dataForm['usmail'],
         'usdeshabilitado' => null,
     ];
-    echo 'MODIFICACIONNNNNNN DE FORMULARIO';
-    viewArray($user);
+    // echo 'MODIFICACIONNNNNNN DE FORMULARIO';
+    // viewArray($user);
     if ($abmUsuario->modificacion($user)) {
         header('location:index.php?code=10');
     } else {
