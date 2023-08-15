@@ -38,6 +38,32 @@
                     <div class="container d-flex justify-content-center ">
                         <p class="container-fluid"><span class="navbar-brand mb-0  text-warning ">FACULTAD DE INFORMATICA - PROGRAMACION WEB DINAMICA </span></p>
                     </div>
+                    <div class="d-flex justify-content-between ">
+
+                        <div class="dropdown mx-3">
+                            <button class="btn btn-secondary dropdown-toggle" title="Opciones de usuario" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php
+                                if (isset($_SESSION['activa']) && $_SESSION['activa'] == true) { ?>
+                                    <i class="fas fa-user-check text-info"> </i><?php
+                                                                                } else { ?>
+                                    <i class="fas fa-user-times  text-warning"> <br> </i> <?php } ?>
+                            </button><span class="text-white"> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <?php if (!isset($_SESSION['activa']) || (isset($_SESSION['activa']) && $_SESSION['activa'] == false)) { ?>
+                                    <li><a class="dropdown-item " href="../../tp5/login/">Iniciar sesion</a></li>
+                                <?php } else { ?>
+                                    <li><a class="dropdown-item" href="verificaLog.php?accion=cerrar">Cerrar sesion</a></li>
+                                <?php } ?>
+                                <?php if (isset($_SESSION['usuario'])) {
+                                    if ($_SESSION['rol'] == '1' || $_SESSION['rol'] == '1') { ?>
+                                        <li><a class="dropdown-item " href="#">Modificar usuarios</a></li>
+                                <?php }
+                                } ?>
+                            </ul>
+
+                        </div>
+
+                    </div>
 
                 </nav>
             </div>
@@ -205,9 +231,9 @@
                                     <li>
                                         <a href="../../tp5/login/listarUsuarios.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Listar Ususarios </span> </a>
                                     </li>
-                                    <?php
-                                        }
-                                        ?>
+                                <?php
+                                }
+                                ?>
 
                                 <li>
                                     <a href="../../tp5/login/login2.php" class="nav-link px-0"> <i class="bi bi-pencil-square"></i> <span class="d-none d-sm-inline">Login2 </span> </a>

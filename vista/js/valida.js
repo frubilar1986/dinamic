@@ -1,5 +1,5 @@
 // validacion de formularios
-//alert("inicia validajs ")
+// alert("inicia validajs ")
 function validaForm() {
     var inp_nro = document.getElementById('nro');
     var resp = true
@@ -107,4 +107,16 @@ function deriva() {
     }, 3000);
 
 }
+
+//training js basico y mas... sorry
+
+
+const arr = ['text',123,false,{prop:'valor'},[1,2,3,4,5]];
+console.log(arr)
+
+//practica antes de react
+const fxflecha = () =>console.log(`hola ${arr[3].prop}`);
+
+    // console.log(fxflecha());
+
 

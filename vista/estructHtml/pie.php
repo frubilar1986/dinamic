@@ -51,8 +51,8 @@
             <script type="text/javascript" src="../../bootstrap5/js/validator.js" type="text/javascript"></script>
             <!-- <script src="../../bootstrap5/js/bootstrapValidator.min.js" type="text/javascript"></script> -->
             <script src="../../bootstrap5/js/bootstrapValidator0.5.3.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="../../js/validaJs.js"></script>
-            <!-- <script src="../../js/validaJs.js"></script> -->
+            <script type="text/javascript" src="../../js/valida.js"></script>
+            <script src="../../js/validaJs.js"></script>
             <script src="../../js/codigo.js"></script>
             </body>
 

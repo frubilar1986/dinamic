@@ -19,9 +19,9 @@ class AbmUsuario
     {
         $usuario = null;
 
-        if (isset($param['id'])) {
+        if (isset($param['idusuario'])) {
             $usuario = new Usuario;
-            $usuario->setear($param['id'], null, null, null, null);
+            $usuario->setear($param['idusuario'], null, null, null, null);
         }
         return $usuario;
     }

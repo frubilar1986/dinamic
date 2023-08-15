@@ -42,7 +42,13 @@ include_once "../../estructHtml/cabecera.php";
                                     if($_SESSION['rol'] == 1 || $_SESSION['rol'] == 4){
      
                                         echo "<td>" . "<a class='btn btn-primary' href='editUser.php?id=". $objUser->getIdUsuario()."'><i class='fas fa-pen-square'></i></a>" . "</td>";
-                                        echo "<td>" . "<a class='btn btn-primary' href='#'><i class='fas fa-pen-square'></i></a>" . "</td>";
+                                        if($objUser->getUsDeshabilitado()== null){
+                                            echo "<td >" . "<a class='btn btn-danger' disabled href='nuevoUsAccion.php?id'><i class='bi bi-hand-thumbs-down-fill'></i></a>" . "</td>";
+
+                                        }else{
+                                            echo "<td>" . "<a class='btn btn-success' href='nuevoUsAccion.php?id'><i class='bi bi-hand-thumbs-up-fill'></i></a>" . "</td>";
+
+                                        }
                                     }
                                 }
                                // echo "<td>" . $objUser->getObjPersona()->getApellido() . "</td></tr>";

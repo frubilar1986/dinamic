@@ -134,10 +134,10 @@ class UsuarioRol
                     $usuarioRol = new UsuarioRol;
                     $usuario = new Usuario;
                     $rol = new Rol;
-                    
+
                     $usuario->setIdUsuario($row['idusuario']);
                     $usuario->cargar();
-                    
+
                     $rol->setIdRol($row['idrol']);
                     $rol->cargar();
                     $usuarioRol->setear($usuario, $rol);

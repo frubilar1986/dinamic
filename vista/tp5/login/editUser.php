@@ -20,7 +20,7 @@ include_once "../../estructHtml/cabecera.php";
                             <div class="card-body p-5 rounded shadow bg-white">
                                 <!-- <form action="accion.php" method="post" name="eje7" class="needs-validation" novalidate onsubmit="return ctrlJsEje7()"> -->
                                 <!-- FORMULIARIO -->
-                                <form action="delete.php" method="post" id="" name="" class="was-validated" data-toggle="" novalidate onsubmit="">
+                                <form action="nuevoUsAccion.php" method="post" id="" name="" class="was-validated" data-toggle="" novalidate onsubmit="">
                                     <p class="h3 mb-3 text-warning "><i class="fas fa-user "> Editar mis datos </i> <?php ?></p>
                                     <?php
                                     $abmUsuario = new AbmUsuario;
@@ -72,8 +72,8 @@ include_once "../../estructHtml/cabecera.php";
 
                                 </form>
                                 <?php if ($_SESSION['rol'] == 1) {
-
-                                    echo "<a href='delete.php?id=" . $usuario->getIdUsuario() . "&accion=delete' ><button class='mx-auto mt-3 btn btn-danger'>eliminar usuario</button></a>";
+                                    
+                                    echo "<a href='nuevoUsAccion.php?id=" .  $usuario->getIdUsuario() . "&accion=delete' ><button class='mx-auto mt-3 btn btn-danger'>eliminar usuario</button></a>";
                                 } ?>
 
                                 <!-- <a href="verificaLog.php?accion=cerrar"> <button type="button" class="btn btn-outline-danger">Cerrar session</button></a>

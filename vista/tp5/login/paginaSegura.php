@@ -49,8 +49,9 @@ if (isset($_SESSION['activa'])) {
                     ?>
                     <a href="verificaLog.php?accion=cerrar">
                         <div class="btn-group btn-group-lg" role="group" aria-label="...">Cerrar sesion</div>
+                        
                     </a>
-
+                    <button type="button" onclick="" class="btn btn-info">Info console Js</button>
 
 
 
@@ -68,6 +69,7 @@ if (isset($_SESSION['activa'])) {
                         <p>Usuario no registrado, . This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
                         <hr>
                         <p class="mb-0">Para poder registrarse haga click <a href="index.php">aqu&iacute;</a></p>
+                        
                     </div>
                 <?php
 
